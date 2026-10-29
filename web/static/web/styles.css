@@ -1,78 +1,261 @@
+/* RF-03: Variables de colores institucionales */
 :root {
-    --primary-color: #0c4b33;
-    --secondary-color: #44b78b;
-    --bg-color: #f4f7f6;
-    --text-color: #2c3e50;
-    --card-bg: #ffffff;
+    --color-primario: #173b67;
+    --color-secundario: #2878b5;
+    --color-fondo: #f4f7fb;
+    --color-blanco: #ffffff;
+    --color-texto: #263445;
+    --color-texto-secundario: #64748b;
+    --color-acento: #dceeff;
+    --sombra: 0 8px 25px rgba(23, 59, 103, 0.10);
+    --radio: 16px;
+}
+
+/* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
     line-height: 1.6;
 }
 
-.container {
-    max-width: 900px;
+/* Encabezado */
+.encabezado {
+    background-color: var(--color-blanco);
+    box-shadow: var(--sombra);
+}
+
+.navegacion {
+    max-width: 1150px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-.header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 40px 0;
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--color-primario);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--color-secundario);
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.menu a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.menu a:hover {
+    color: var(--color-secundario);
+}
+
+/* Presentación principal */
+.presentacion {
+    padding: 90px 24px;
+    background: linear-gradient(
+        135deg,
+        var(--color-primario),
+        var(--color-secundario)
+    );
+    color: var(--color-blanco);
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.header h1 {
-    margin: 0;
-    font-size: 2.2rem;
+.presentacion-contenido {
+    max-width: 750px;
+    margin: 0 auto;
 }
 
-.header p {
-    margin-top: 10px;
-    font-size: 1.1rem;
-    opacity: 0.9;
+.etiqueta {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    color: var(--color-acento);
 }
 
-.content {
-    margin-top: 30px;
+.presentacion h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.subtitulo {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--color-blanco);
+    color: var(--color-primario);
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra);
+}
+
+/* Sección de tarjetas */
+.servicios {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 70px 24px;
+}
+
+.titulo-seccion {
+    text-align: center;
     margin-bottom: 40px;
 }
 
-.card {
-    background-color: var(--card-bg);
-    padding: 25px;
-    border-radius: 8px;
+.titulo-seccion h2 {
+    font-size: 32px;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.titulo-seccion p {
+    color: var(--color-texto-secundario);
+}
+
+/* RF-01: Tarjetas con bordes redondeados y sombras */
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    border: 1px solid #e5edf5;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(23, 59, 103, 0.16);
+}
+
+.icono {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-acento);
+    border-radius: 14px;
+    font-size: 30px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    border-left: 5px solid var(--secondary-color);
 }
 
-.card h2 {
-    margin-top: 0;
-    color: var(--primary-color);
+.tarjeta h3 {
+    color: var(--color-primario);
+    font-size: 21px;
+    margin-bottom: 12px;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.tarjeta p {
+    color: var(--color-texto-secundario);
 }
 
-li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.footer {
+.sin-datos {
+    grid-column: 1 / -1;
     text-align: center;
-    padding: 20px 0;
-    background-color: #e2e8f0;
-    color: #64748b;
-    font-size: 0.9rem;
+    padding: 30px;
+}
+
+/* Pie de página */
+.pie-pagina {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 25px;
+}
+
+/* RF-02: Adaptación para tabletas */
+@media (max-width: 900px) {
+    .contenedor-tarjetas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .presentacion {
+        padding: 70px 24px;
+    }
+
+    .presentacion h1 {
+        font-size: 36px;
+    }
+}
+
+/* RF-02: Adaptación para celulares */
+@media (max-width: 600px) {
+    .navegacion {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .presentacion {
+        padding: 55px 20px;
+    }
+
+    .presentacion h1 {
+        font-size: 30px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+    }
+
+    .servicios {
+        padding: 45px 18px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 27px;
+    }
+
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta {
+        padding: 24px;
+    }
 }
