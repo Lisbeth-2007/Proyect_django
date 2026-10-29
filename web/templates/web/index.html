@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<htm lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titulo }}</title>
+    <link rel="stylesheet" href="{% static 'web/styles.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>{{ titulo }}</h1>
+            <p>{{ subtitulo }}</p>
+        </div>
+    </header>
+
+    <main class="container content">
+        <section class="card">
+            <h2>Estado del Proyecto</h2>
+            <p>El servidor de desarrollo está ejecutando la aplicación correctamente con el patrón MVT.</p>
+        </section>
+
+        <section class="card">
+            <h2>Componentes Demostrados</h2>
+            <ul>
+                {% for modulo in modulos %}
+                    <li><strong>✓</strong> {{ modulo }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 - Guía de Programación Python/Django | Entorno de Aprendizaje</p>
+    </footer>
+</body>
+</htm
